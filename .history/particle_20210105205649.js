@@ -29,7 +29,6 @@ export class Particle {
       const cur = this.points[i];
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
-      ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
     }
   }
 
