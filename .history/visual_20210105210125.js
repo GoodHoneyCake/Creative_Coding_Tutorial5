@@ -1,6 +1,7 @@
 import { Particle } from "./particle.js";
 
 const TOTAL = 10;
+
 export class Visual {
   constructor(pos, colorCtx, width, height) {
     this.colorCtx = colorCtx;
@@ -18,8 +19,5 @@ export class Visual {
 
   getColor() {
     const x = Math.round(Math.random() * (this.width - 1));
-    const y = Math.round(Math.random() * (this.height - 1));
-    const data = this.colorCtx.getImageData(x, y, 4, 4).data;
-    return `rgb(${data[0]}, ${data[1]}, ${data[2]})`;
   }
 }
