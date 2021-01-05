@@ -71,7 +71,7 @@ class App {
     this.pos = this.text.setText("M", 6, this.stageWidth, this.stageHeight);
   }
 
-  animate(t) {
+  animate() {
     requestAnimationFrame(this.animate.bind(this));
 
     if (this.visual) {

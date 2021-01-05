@@ -77,6 +77,7 @@ class App {
     if (this.visual) {
       this.visual.animate(this.ctx);
     }
+    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
   }
 }
 

@@ -9,8 +9,6 @@ class App {
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
-    this.thumbs = [];
-
     WebFont.load({
       google: {
         families: ["Hind:700"],
@@ -39,7 +37,7 @@ class App {
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
 
-        requestAnimationFrame(this.animate.bind(this));
+        requestAnimationFrame(this.animata.bind(this));
       },
     });
   }
@@ -49,15 +47,8 @@ class App {
       const item = this.thumbs[i].item;
       if (i == index) {
         item.classList.add("selected");
-      } else {
-        item.classList.remove("selected");
       }
     }
-    const img = this.thumbs[index].img;
-
-    await setColor(img).then((obj) => {
-      this.visual = new Visual(this.pos, obj.colorCtx, obj.width, obj.height);
-    });
   }
 
   resize() {
@@ -71,12 +62,13 @@ class App {
     this.pos = this.text.setText("M", 6, this.stageWidth, this.stageHeight);
   }
 
-  animate(t) {
+  animate() {
     requestAnimationFrame(this.animate.bind(this));
 
     if (this.visual) {
       this.visual.animate(this.ctx);
     }
+    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
   }
 }
 

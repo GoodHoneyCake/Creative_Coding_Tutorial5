@@ -31,7 +31,6 @@ export class Particle {
       const cy = (prev.y + cur.y) / 2;
       ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
     }
-    ctx.stroke();
   }
 
   setRandom(pos, gap) {

@@ -11,7 +11,7 @@ export class Particle {
         y: pos.y,
       },
     ];
-    for (let i = 1; i < TOTAL; i++) {
+    for (let i = 0; i < TOTAL; i++) {
       const prev = this.points[i - 1];
       this.points.push(this.setRandom(prev, ranMax));
     }
@@ -31,7 +31,6 @@ export class Particle {
       const cy = (prev.y + cur.y) / 2;
       ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
     }
-    ctx.stroke();
   }
 
   setRandom(pos, gap) {
